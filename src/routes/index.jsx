@@ -4,11 +4,11 @@ import GuestOnlyRoute from '../components/GuestOnlyRoute';
 
 import Signin from '../pages/signin';
 import { CategoriesRoute } from './CategoriesRoute';
-// import { PaymentsRoute } from './PaymentsRoute';
+import PaymentsRoute from './PaymentsRoute';
 import SNavbar from '../components/Navbar';
 import { HomeRouter } from './HomeRouter';
 import TalentsRouter from './TalentsRouter';
-// import { EventsRoute } from './EventsRoute';
+import EventsRoute from './EventsRoute';
 // import { OrdersRoute } from './OrdersRoute';
 
 export function AppRoutes() {
@@ -34,9 +34,9 @@ export function AppRoutes() {
         <Route path='dashboard/*' element={<HomeRouter />} />
         <Route path='categories/*' element={<CategoriesRoute />} />
         <Route path='talents/*' element={<TalentsRouter />} />
-        {/* <Route path='payments/*' element={<PaymentsRoute />} />
+         <Route path='payments/*' element={<PaymentsRoute />} /> 
         <Route path='events/*' element={<EventsRoute />} />
-        <Route path='orders/*' element={<OrdersRoute />} />   */}
+        {/* <Route path='orders/*' element={<OrdersRoute />} />  */}
         <Route path='' element={<Navigate to='/dashboard' replace={true} />} />
       </Route>
     </Routes>

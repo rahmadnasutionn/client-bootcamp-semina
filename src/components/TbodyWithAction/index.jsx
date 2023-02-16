@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Image, Spinner } from 'react-bootstrap';
 // import moment from 'moment';
 import config from '../../config';
+import moment from 'moment/moment';
 
 function TbodyWithAction({
   data,
