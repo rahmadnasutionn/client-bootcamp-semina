@@ -9,7 +9,7 @@ import SNavbar from '../components/Navbar';
 import { HomeRouter } from './HomeRouter';
 import TalentsRouter from './TalentsRouter';
 import EventsRoute from './EventsRoute';
-// import { OrdersRoute } from './OrdersRoute';
+import OrderRoute from './OrderRoute';
 
 export function AppRoutes() {
   return (
@@ -36,7 +36,7 @@ export function AppRoutes() {
         <Route path='talents/*' element={<TalentsRouter />} />
          <Route path='payments/*' element={<PaymentsRoute />} /> 
         <Route path='events/*' element={<EventsRoute />} />
-        {/* <Route path='orders/*' element={<OrdersRoute />} />  */}
+        <Route path='orders/*' element={<OrderRoute />} /> 
         <Route path='' element={<Navigate to='/dashboard' replace={true} />} />
       </Route>
     </Routes>

@@ -6,6 +6,7 @@ import categoriesReducer from "./categories/reducer";
 import eventReducer from "./events/reducer";
 import listReducer from "./lists/reducer";
 import notifReducer from "./notif/reducer";
+import orderReducer from "./orders/reducer";
 import paymentsReducer from "./payments/reducer";
 import talentReducer from "./talents/reducer";
 
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     talents: talentReducer,
     payments: paymentsReducer,
     events: eventReducer,
-    lists: listReducer
+    lists: listReducer,
+    orders: orderReducer
  });
 
 const store = createStore(

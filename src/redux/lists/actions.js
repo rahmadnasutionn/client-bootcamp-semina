@@ -105,3 +105,50 @@ export const fetchListTalents = () => {
         }
     };
 }
+
+export const startFetchingListEvent = () => {
+    return {
+        type: START_FETCHING_LISTS_EVENTS
+    }
+}
+
+export const successFetchingListEvent = ({ events }) => {
+    return {
+        type: SUCCESS_FETCHING_LISTS_EVENTS,
+        events
+    }
+};
+
+export const errorFetchingListEvent = () => {
+    return {
+        type: ERROR_FETCHING_LISTS_EVENTS
+    }
+}
+
+
+
+export const fetchListEvents = () => {
+    return async(dispatch) => {
+        dispatch(startFetchingListEvent());
+
+        try {
+            let res = await debouncedListEvents('/cms/events');
+            console.log('res', res);
+            let _temp = [];
+
+            res.data.data.forEach((res) => {
+                _temp.push({
+                    value: res._id,
+                    label: res.title,
+                    target: { value: res._id, name: 'event' }
+                });
+            });
+
+            dispatch(successFetchingListEvent({
+                events: _temp
+            }));
+        } catch (error) {
+            dispatch(errorFetchingListEvent());
+        }
+    }
+};
