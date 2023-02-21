@@ -8,8 +8,8 @@ const handleError = (error) => {
     const status = response ? response.status : null;
 
     try {
-        setMessage = response ? .data ? .data ? .message || message;
-        setStep = response ? .data ? .data ? .step || '';
+        setMessage = response ?.data?.data?.message || message;
+        setStep = response?.data?.data?.step || '';
     } catch (error) {
         console.log(error);
     }
@@ -19,7 +19,7 @@ const handleError = (error) => {
             dataErr = {
                 data: response,
                 code: response.status,
-                message: response ? .data ? .message || setMessage,
+                message: response?.data ?.message || setMessage,
                 desc: 'Bad Request'
             };
             Break;
@@ -39,3 +39,5 @@ const handleError = (error) => {
             break;
     }
 }
+
+export default handleError;
